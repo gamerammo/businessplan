@@ -1,0 +1,21 @@
+language: latex
+sudo: required
+before_install:
+- sudo apt-get -qq update
+- sudo apt-get install texlive texlive-latex3
+- sudo apt install texlive-latex-extra
+- chmod +x build.sh
+script:
+- ./build.sh
+deploy:
+  provider: script
+  script: chmod +x ./travis_deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
+env:
+  global:
+    - ENCRYPTION_LABEL="acb03761bdb0"
+    - COMMIT_AUTHOR_EMAIL="xcesiv@gamerammo.io"
+    - COMMIT_AUTHOR="xcesiv"
+    - PUSH_REPO="git@github.com:gamerammo/businessplan.git"

@@ -1,0 +1,773 @@
+
+\documentclass[11pt]{report}
+%\usepackage{tweaklist}
+\usepackage{cancel}
+\usepackage{xspace}
+\usepackage[margin=1in, paperwidth=8.5in, paperheight=11.0in]{geometry}
+\usepackage{graphicx, array}
+\usepackage{multicol}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\graphicspath{ {images/} }
+\usepackage{packages/fancyhdr}
+	\pagestyle{fancy}
+	\headheight 20pt
+	\rfoot{Page \thepage}
+	\cfoot{\LARGE{{\businessplanVersionNumber}} \tiny{\textcopyright 2018 Gamer Ammo, Inc.}}
+	\lfoot{sss/FEB2018}
+\usepackage{pdflscape}
+\usepackage{eurosym}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{verbatim}
+\usepackage{caption}
+\usepackage[numbers]{natbib}
+\usepackage{float}
+\usepackage{pdflscape}
+\usepackage{mathtools}
+\usepackage[usenames,svgnames]{xcolor}
+\usepackage{afterpage}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{indentfirst}
+%,pagebackref=true
+
+\usepackage{tabu} %requires array.
+
+%This should be the last package before \input{version.tex}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+% "hyperref loads the url package internally. Use \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref} to pass the option to the url package when it is loaded by hyperref. This avoids any package option clashes." Source: <https://tex.stackexchange.com/questions/3033/forcing-linebreaks-in-url/3034#comment44478_3034>.
+% Note also this: "If the \PassOptionsToPackage{hyphens}{url} approach does not work, maybe it's "because you're trying to load the url package with a specific option, but it's being loaded by one of your packages before that with a different set of options. Try loading the url package earlier than the package that requires it. If it's loaded by the document class, try using \RequirePackage[hyphens]{url} before the document class." Source: <https://tex.stackexchange.com/questions/3033/forcing-linebreaks-in-url/3034#comment555944_3034>.
+% For more information on using the hyperref package, refer to e.g. https://en.wikibooks.org/w/index.php?title=LaTeX/Hyperlinks&stable=0#Hyperlink_and_Hypertarget.
+	\hypersetup{
+    	bookmarks=true,         % show bookmarks bar?
+	unicode=false,          % non-Latin characters in Acrobat’s bookmarks    		pdftoolbar=true,        % show Acrobat’s toolbar?
+	pdfmenubar=true,        % show Acrobat’s menu?
+	pdffitwindow=false,     % window fit to page when opened
+	pdfstartview={FitH},    % fits the width of the page to the window
+	pdftitle={Gamer Ammo Business Plan},    % title
+	pdfauthor={swaevior},     % author
+	pdfsubject={Gamer Ammo business plan},   % subject of the document
+	pdfcreator={xcesiv},   % creator of the document
+	pdfproducer={swaevior}, % producer of the document
+	pdfkeywords={gamer ammo, gamerammo, blockchain, ethereum, ethereum classic, second wave, second-wave, application-layer}, % list of keywords
+	pdfnewwindow=true,      % links in new window
+	colorlinks=true,        % false: boxed links; true: colored links
+	linkcolor=Gray,         % color of internal links
+	citecolor=Gray,        % color of links to bibliography
+	filecolor=magenta,      % color of file links
+	urlcolor=Gray           % color of external links
+}
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+
+
+% Default rendering options
+\definecolor{pagecolor}{rgb}{255,255,255}
+\def\businessplanVersionNumber{unknown revision}
+\IfFileExists{options.tex}{\input{options.tex}}
+
+\newcommand{\hcancel}[1]{%
+    \tikz[baseline=(tocancel.base)]{
+        \node[inner sep=0pt,outer sep=0pt] (tocancel) {#1};
+        \draw[black] (tocancel.south west) -- (tocancel.north east);
+    }%
+}%
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\newcommand*\eg{e.g.\@\xspace}
+\newcommand*\Eg{e.g.\@\xspace}
+\newcommand*\ie{i.e.\@\xspace}
+%\renewcommand{\itemhook}{\setlength{\topsep}{0pt}  \setlength{\itemsep}{0pt}\setlength{\leftmargin}{15pt}}
+
+\author{\small{Prepared by: sb swae}\\\textit{\tiny{---for---}}\\\huge{\textbf{Jon Dault}}}
+\title{  \begin{center}
+        \vspace{2ex}
+        \begin{tabular}{|||c|||}
+            \hline\hline\hline
+            \fontsize{3.5mm}{1.2em}
+            DRAFT Version 0.81 \\
+            \small{ \textbf{\businessplanVersionNumber}} for revision history. \\
+            Document No. 001 \\
+            \copyright\hspace{.25em} 2018 Gamer Ammo, Inc.\\
+            For Private Use Only \\ \hline\hline\hline
+        \end{tabular}
+    \end{center}
+    \vspace{10ex}
+    \textbf{\huge{Gamer Ammo, Inc., Business Plan}}\\{\small9 Groveland Street\\Battle Creek, MI 49017\\t: +1 269.389.0082\\e: info@gamerammo.io\\gamerammo.io}}
+
+\begin{document}
+\pagecolor{pagecolor}
+\maketitle
+\part{Business Plan}
+\tableofcontents
+\listoftables
+\newpage
+\chapter{Executive Summary}
+\section{Introduction}
+\textbf{It's Time to Reload.}
+
+Welcome to Gamer Ammo. My name is Brandon JP Scott and I am the CEO and founder of this company. In this document, you will find our plan of attack for creating a grassroots gaming movement and the path we have set out to remove the speculation and uneasiness that stigmatizes blockchain technology.
+
+We are no ordinary blockchain company: We don't need an ICO, we aren't wishing on hopeful dreams, and we have already started to build a community of gamers and developers ready to attack the scene and build this platform.
+
+Join us, for just a moment, and observe our strategy. I believe that by time you've finished reviewing this document, you will see the world the way we do and want to be part of this game-changing company.
+
+We declare that \textit{Gaming is a Profession}.
+
+\textbf{Do you?}
+\newline\newline
+Brandon JP Scott\newline\textit{Chief Executive Officer, Gamer Ammo, Inc.}
+\section{Elevator Pitch}
+Let us tell you about the ``blue collar gamer'' and how our company is making the gaming middle class using blockchain technology without the need for an ICO. Gamer Ammo is on a mission to declare that Gaming is a Profession. We do so by giving the gamer an incentive to win outside of the game while getting to stay in-game.
+
+We want moms to stop saying, ``You're wasting your time playing video games.'' We want gamers to be able to look their mothers in the eye and say, “It’s my job.” Only we can do this because we're gamers ourselves and we're working hand-in-hand with local and global gaming leadership to build a chat \& content application based on the notion of ``Gamer First.'' By making the end-user the priority, we provide them with power and immutability.
+
+We've built something that stands in a class of its which incentivizes a rapidly-growing group of end-users to use paradigm-shifting technology. Along the way, we've forged an ideological alignment between the only blockchain that meets our standards.
+\section{Mission Statement}
+\paragraph{Gamer Ammo's mission is to empower gamers and to be a critical resource for all participants in the gaming industry. We aim to achieve this by positioning ourselves at the intersection of news, content delivery, coaching services, and gaming finance. In the process, we will offer a powerful platform to a diverse community of users, nurture peak performance in competitive play, and bring gaming to the blockchain.}
+\section{Problem Statement}
+Gaming only rewards the elite, natural talent of a professional esports players or the 12-16 hour per day streamers. The rest of the gaming community is stuck playing games for free. They spend many hours hoping to break into the big leagues.
+
+But they don't have to be doing this. The biggest problem here is that gamers have yet to really embrace the blockchain. Similar to gaming, blockchain technology primarily rewards the elites---but in that case, it's the financially elite, not people with skills.
+
+The blockchain space is littered with ERC-20 tokens. Some have promise, but one wonders how long the charade will go on. There needs to be a case study for the use of the new ERC-223 token standard, which is now available on the Ethereum Classic network. Except, given the distinct lack of application-layer development, there's nobody there to use it.
+
+How do we take on the entire gaming culture and get them to adopt a new technology as a social norm while simultaneously fulfilling the need for an application-layer implementation on Ethereum Classic?
+
+These are the problems we aim fix with a total overhaul.
+\section{The Solution}
+The solution is a gamer-focused blockchain application that is designed to be the case study for ERC-223. It will create a circular economy with blockchain technology so gamers will have an incentive to use the token. Further, these gamers need to be comfortable while using it in addition to feeling as though it is bettering their lives. Thus, there must be a financial incentive to the end user---not the token investor or speculator---for purchasing the token;  there must be a way for the token to be circulated and brought back into the environment without the end-user feeling as if it disrupts their gameplay.
+
+Gamer Ammo's first piece of software, Clutchat, can achieve that goal. It was built hand-in-hand with leadership from both close to home and as far as the other side of the globe. A chat and content production platform, we took the best features from the apps that gamers love to use today, Reddit and Discord, and attached a financial incentive while keeping parts of it free.
+
+Chatting, like on Discord,\cite{discord} will always be free. Content production will cost the user a token called Voice. It is given to them in increments of ten units every 3 hours and has an expiry built in so they never have more then ten to use at one time. They use 3 to post, 1 to upvote other people's content, and 2 to upvote their own content. When they post or upvote themselves, the Voice is burned. If they use their Voice to upvote someone else's content, that user receives that Voice and it can be used for another three hours. The Voice the user has earned over time turns into The Float, which is a running tally of how much Voice she's earned from other users.
+
+The Float, on pay period schedules, will be redeemable for Ethereum Classic or Gamerammo Tokens. If the user chooses Gamerammo Tokens, he or she can  use those to acquire more Voice, gear to improve their gameplay, or coaching from players who are at the skill level they wish to attain. With our technology, we have made it so that our token will be able to easily integrate more features, more services, and more products from outside third parties---but only in the event our end-users want it.
+
+This solves 2 things: It provides the first-ever application-layer protocol for people to be able to use Ethereum Classic, whose backend technology is some of the best in the blockchain industry, and it allows for gamers to adopt the blockchain without needing to know all the technical details.
+
+We are generating a stable, immutable environment that calls for no speculation and requires no ICO. We are developing real technology that doesn't interfere with the gamer's in-game play and puts everything they need into one easy-to-use platform.
+\section{Target Market}
+Our target market is gamers. We will be focusing on selling the token to gamers, developing the product for gamers, and marketing to gamers. The Ethereum Classic development scene also becomes the target market with proof of concept. As long as we continue to build up their community by producing the best product and aligning ourselves ideologically with the principles that govern the Ethereum Classic blockchain, we can devote our focus to the gamer.
+\section{Economic Dynamics}
+We plan to leverage an exponential growth curve for user growth and a exponential decay curve for tokens on reserve. In doing so, we create a demand for the token and an incentive to stay in the platform while allowing the token to be available to the appropriate amount of users. With two of the largest growing markets in the world behind us, a team of excellent developers and partners, the right marketing strategy, and strategic investors, we predict Gamer Ammo will be able to reach profitability inside of 24 months.
+\section{The Team}
+Our team began with one blockchain engineer who had a vision of bringing blockchain to the gamer. Pretty soon. He soon tapped a fellow University of Michigan Wolverine, Sebastian Swae, to jump aboard and handle the financial and legal work involved with launching such a project. Once he was installed, we found a business savvy, blue collar gamer with a heart of gold and a powerful vision to ensure the product stayed gamer-first.
+
+Embodying the idea that gamers come first, the team continued to grow and we picked up a theoretical mathematician and game developer as a Chief Technology Officer and one of the most creative Dungeons and Dragons dungeon masters we've ever seen to wield the Adobe Suite of design products as our Chief Creative Officer.
+
+So, what's different about our team? Everything. We have all the essential tools to build this product in the five pairs of hands we have on deck. All we need is the right investor to come aboard our team and help us take our reach worldwide.
+\section{The Ask}
+We are seeking an angel investment of \$10,000,000 USD or approximately \euro8,200,000 (see Table \ref{tab:budget-total}).
+
+In return, we are offering a 7.75\% equity stake issued in preferred shares and a seat on the Board of Directors.
+\chapter{Business and Industry Overview}
+We are positioning ourselves to succeed in two of the fastest growing technology industries in the world: gaming and blockchain application-layer technology. The gaming industry comprises three user groups: social (\ref{social-gamer}), hardcore (\ref{hardcore-gamer}), and professional (\ref{professional-gamer}). Blockchain application-layer technology is composed of two types of tokens: security tokens (\ref{security-token}) \& utility tokens (\ref{utility-token}).
+
+We are positioning ourselves at the convergence of the 3 gaming user groups by creating a utility token, which is less speculative in nature and has a practical application. By incentivizing professionalism, community building, and financial gain to gamers of all skill levels who use our Ethereum Classic blockchain application-layer module, we will be able to turn gaming into a profession.
+
+As has been already mentioned, our business encompasses both gaming (\ref{gaming-industry}) blockchain (\ref{blockchain-application-layer-tokens}). In the following sections, we will elaborate on these further by breaking them down into the different layers that are associated with each.
+\section{Gaming User Groups}\label{gaming-industry}
+The social, hardcore, and professional gamer each has a different style of play, amount of time they play, likelihood of joining our platform and what they might use it for. Outlined below are the definitions of each of these groups.
+\subsection{Social}\label{social-gamer}
+A ``social game'' is an online game that: 1) utilizes a player's social graph to provide an enhanced game experience; 2) facilitates and encourages communication about the game outside of the game; and 3) has a minimal barrier to entry.\cite{social-game}
+\subsection{Hardcore}\label{hardcore-gamer}
+A ``hardcore gamer'' is someone who spends as much or more of their time on ancillary gaming-related activities than they do actually playing and enjoying the games. Hardcore gamers spend 10 hours per week on forums about a game or a platform, and only two hours a week playing it. \cite{hardcore-gamer}
+\subsection{Professional}\label{professional-gamer}
+Being a professional gamer is all about the attitude and approach to gaming. Being a professional gamer takes more than just attending tournaments---indeed, it’s all about the attitude you take when gaming and conducting yourself among the community. The Pro should be an active voice in their game’s community and help to provide a number of services to less-skilled players. Whether this is through commentating matches or ``theorycrafting'' on new strategies, or even just streaming practice matches---it all helps their game’s community grow in some way.\cite{professional-gamer}
+\section{Blockchain Application-Layer Tokens}\label{blockchain-application-layer-tokens}
+\subsection{Security}\label{security-token}
+Security tokens are characterized by speculative buying and selling activity in secondary retail markets that contribute to volatility in price. Tokens are often made available to the general public in Initial Coin Offerings (\textbf{ICO}s).\cite{what-is-an-ico} From a regulatory standpoint, security tokens pass the United States Securities and Exchange Commission's definition of securities (\textit{i.e.,} they pass the Howey Test\cite{howey-test}). Wide sale and offering of securities requires registration with the SEC, information disclosures, and other costly measures in order to be legal. To date, no ICO has registered with the SEC, placing them in the crosshairs of regulators.\cite{jay-clayton-testimony}
+\subsection{Utility}\label{utility-token}
+A utility token sidesteps the legal and regulatory concerns surrounding US securities law in a number of ways. Utility tokens are used to access a service or execute a function within an application and do not at all resemble a speculative ``investment contract in common enterprise.''\cite{defining-common-enterprise} \cite{investment-contract}
+
+In the economic circuit that Gamer Ammo is building, tokens are not intended to leave the system and be traded freely or speculatively on secondary markets. Thus, there is no ``reasonable expectation of profits based on the efforts of others'' by holders of the token. In fact, our entire system is open source and the users/holders of tokens themselves will be performing the majority of the work that drives the value of the token.
+
+Further, we also adopt the view that venture capitalist Tim Draper presented in his open letter to the SEC in mid-2017: ``If the purpose of a token is for societal transformation, and all proceeds go to the support and development of the token, it need not register.”\cite{tim-draper-tweet} Indeed, our utility token is intended to produce a radical transformation in a segment of society and any money earned in the process of developing and operating the system in which the token is deployed will be used to further develop the platform.
+\section{Industry Overview}
+According to CNBC, the total value of the gaming industry expected to surpass \$100B USD in 2017.\cite{CNBC-gaming-market} According to mygaming, there were a more than 2.5 billion video gamers worldwide in 2016.\cite{number-of-gamers}
+\subsection{User Breakdown}
+\begin{itemize}
+\item 1.9\% of gamers are “Hardcore”---22+ hours a week
+\item 39\% of most frequent gamers play social games
+\item The average gamer is 35 years old
+\end{itemize}
+\subsection{Network Evaluation}
+The total market capitalization of the Ethereum Classic cryptocurrency was \$3,344,641,878 on 15 February 2018. Average 24-hour volume exceeds \$350M.\cite{ETC-market-data}\cite{worldcoin-ETC-market-data}
+\chapter{Competition and Market Analysis}
+The Gamer Ammo team keeps a close watch over both the gaming and blockchain spaces in order to stay abreast of recent developments and our competition.
+\section{Analysis}
+\subsection{Gaming}
+The vast majority of gamers today are not your stereotypical male teenager sitting in their mom's basement like our CEO was ``back in the day.'' Today, the majority of gamers are female and they play social games: ``the reality is that the most popular gaming device today is the smartphone, and the most popular genres are puzzle, trivia and word games. Less \textit{Call of Duty} and more \textit{Words With Friends}.''\cite{female-gamers} On top of that, 29\% of them are over the age of fifty, while the average age of a gamer is 37.\cite{average-gamer-age}
+
+It is very difficult for the gamer to earn income playing these types of games. There are a plethora of roundabout paths people take to be able to earn a living playing video games. Some farm gold, or write for one or two websites that pay them to do so. However, ``a lot of these opportunities should be looked at as ways to make money on the side. They won’t replace [the gamer's] day job.''\cite{make-money-playing-games}
+\subsection{Blockchain}
+The majority of tokens in existence derive their value not from the projects or apps that are supposed to be backing them but rather from speculative activity in secondary markets.
+
+In 2016, the Ethereum blockchain hard forked and created two chains. The new chain, which was formed in response to a major attack, retained the Ethereum name. The original chain, on which we are developing, is known as Ethereum Classic. The ideology that dominates the Ethereum Classic sphere is that ``code is law''\cite{code-is-law}---just as there exist laws of thermodynamics in physics.
+
+The majority of tokens in circulation are built on the outdated ERC-20 protocol that does not include adequate protections for the user. ERC-20 is the original version of the Ethereum tokenization system and was initialized almost half a decade ago. It has not yet been updated. Theres exists a new protocol for tokens called ERC-223 that fixes security and value transfer vulnerabilities.\cite{erc223}
+
+Ethereum Classic has been quick to embrace the ERC-223 standard. However, there is a flaw within their system: they have a distinct lack of users on their chain. Comprising mostly developers and miners, the Ethereum Classic chain and community is in need of an application-layer protocol that provides a seamless way for the end user to interact with the Ethereum Classic blockchain.
+
+We have positioned ourselves at exactly this pain point by building a fully-loaded chat and content module that is intended to incentivize collaboration and use of the platform.
+\section{Competition}
+Our competition is in both the gaming and blockchain industries. Most important will be the businesses that currently hold our target market's attention.
+\subsection{Social Gaming}
+The most important aspect of our platform is the social experience of using it. Currently, there are two major competitors for content creation, consumption, and discussion in addition to chat functionality.
+\subsubsection{Reddit\cite{reddit}}
+\begin{itemize}
+\item Sold to Condé Nast in 2013 for a reported \$10-20M
+\item User-submitted content is curated by the community when users deploy an unlimited number of up- and down-votes; this can be easily be manipulated by fake bot accounts
+\item
+Divided into ``subreddits'' that specialize in one particular topic, theme, or content type
+\item 1.66 billion unique visitors per month
+\end{itemize}
+\subsubsection{Discord\cite{discord}}
+\begin{itemize}
+\item Raised \$50M Summer 2017 at a \$725M pre-money valuation
+\item 25M users as of Dec 2016
+\item High-fidelity, low-latency voice chat marketed toward gamers
+\item Ability to host numerous chat channels within a single ``server''
+\end{itemize}
+\subsection{Gaming Platforms on the Blockchain}
+Currently, there are many gaming blockchain platforms available with their attendant ERC-20 tokens. Many of them have received quite large injections of capital from their ICOs. Gamer Ammo's approach to the market is different, however, since we intend to deploy a utility token. We are vying for users' attention over these other blockchain platforms.
+\subsubsection{Game Credits\cite{gamecredits}}
+\begin{itemize}
+\item ICO for \$50M+
+\item Partnership with Unity
+\item Security token
+\end{itemize}
+\subsubsection{Gizer\cite{gizer}}
+\begin{itemize}
+\item \$15M+ ICO
+\item Tournament software
+\item Limited chat functionality
+\item Gaming ecosystem for mobile with petty ``rewards'' for customizing avatars
+\item Security token
+\end{itemize}
+\subsubsection{UnikoinGold\cite{unikoingold}}
+\begin{itemize}
+\item \$29M+ ICO
+\item Backed by Mark Cuban
+\item Security token used for wagering
+\end{itemize}
+\subsubsection{ENJ\cite{enj}}
+\begin{itemize}
+\item \$104M market cap
+\item Social gaming
+\item Virtual goods marketplace
+\item Security token
+\end{itemize}
+\subsection{Incentivized Content Production Platforms}
+There are also other platforms that seek to incentivize content production and curation.
+\subsubsection{Steemit\cite{steemit}}
+\begin{itemize}
+\item \$1B market capitalization
+\item Profit-sharing mechanism incentivizes content production and curation
+\item Includes a staking function the reduces token velocity
+\item Security token that is not only traded on the secondary markets, but relies on that trade to drive key mechanisms within the platform
+\end{itemize}
+\subsubsection{Tron\cite{tron}}
+\begin{itemize}
+\item \$2.6B market cap
+\item Plagiarized\cite{tron-plagiarized} white paper
+\item Decentralized entertainment
+\end{itemize}
+\subsection{Decentralized Chat Applicationss}
+There are multiple decentralized platforms available currently that provide the same level of security through decentralization. They either run on the Ethereum Blockchain or are off-chain completely. However, none interact directly with the Ethereum Classic blockchain.
+\subsubsection{Status\cite{status}}
+\begin{itemize}
+\item Mobile Ethereum network OS
+\item Allows go-ethereum to natively on smartphones
+\item Bulky, intended for developers, and suffers from low user-adoption
+\end{itemize}
+\subsubsection{Matrix\cite{matrix}}
+\begin{itemize}
+\item Off-chain decentralized chat
+\item Allows users to build local chat servers (like Discord)
+\item Users able to switch between servers peer-to-peer
+\item Broad focus
+\item Inherently difficult to implement without relying on centralized identity server
+\item Suffers from usability and adoption issues
+\end{itemize}
+\chapter{Marketing Strategy}
+Our marketing plan is two-fold: bring end-users with no blockchain experience to our platform and build a high level of respect in the Ethereum Classic community.
+\section{Gamer-first Strategy}
+Our strategy is to put the gamer first in our platform. Everything we do is for their benefit and we build the technology around them. This is to ensure rapid and loyal end-user adoption.
+\subsection{Targeting the low-level influencer}
+By targeting influencers with smaller audiences, we are able to leverage that influencer and audience in a controlled fashion. This allows the initial implementation of Clutchat on the blockchain to be tailor-made for an individual gamer. In targeting these influencers we are able to secure a very small group of individuals that we can supply with the best experience possible. We will impress upon them that every voice is important---enough so that they feel they are part of something greater than themselves.
+
+By giving these users the best experience possible, we create brand emissaries. From there we can target more small-level influencers to bring to the platform. While we are tailoring an experience for these users, our initial group of emissaries are out spreading the gospel of Gamer Ammo and Clutchat. This will create a small but steady stream of active users.
+\subsection{Generating a snowball effect}
+This creates a snowball effect to start a new wave of users coming in. Each new user provides a chance to reach out to their contacts. As long as the platform is a new and rewarding experience, this effect keeps happening. One becomes two, two becomes four, four becomes eight, eight to 16, and so on.
+\subsection{Referral Programs}
+On top of this grassroots marketing strategy, we plan to implement referral programs. By leading others to the platform and participating, users are able to generate value for themselves. Incentive programs to bring users on the platform should accelerate the process of user acquisition.
+
+Contests will run weekly or daily for referral programs. As users migrate to the platform we will have more means with which to incentivize this further.
+\subsection{Targeting the community}
+While this is going on we will be targeting specific communities inside of non-blockchain communities---with an emphasis on Reddit and Discord. We are going to be rewarding content production by affiliates of the platform with tokens and prizes. These advocates will start gathering communities around them and introducing potential users to the platform. While employees of the company are targeting people on these platforms, so will our affiliates.
+\subsection{Traditional social media}
+We will also be participating in traditional social media marketing on Twitter, Instagram, and Facebook. A combination of paid and organic traffic will be used to create brand awareness and platform reach. Plans for retargeting ads, Google AdWords, etc., will be proposed by our marketing department specific to each campaign's target and look.
+\subsection{In-house teams}
+We also have our in-house teams which will be deployed to events and competitions around the globe. These people will be not only competing, but setting up booths for brand awareness and product demos. They will make crucial connections with industry leaders at these events.
+\subsection{Surrounding and isolating the high-impact influencer}
+By leveraging the growing community, the influencers flowing in start becoming more high-profile as time goes on. The more users that we are acquiring, the more advantageous for content creators with bigger names to come to the platform. Once high profile influencers start filtering in, it starts a wave. This wave will be pushed by paid and organic traffic from social media outlets and various brand icons.
+\subsection{Organic adoption}
+By structuring our marketing strategy in such a way we are able to utilize our current assets and target gamers in a very natural organic fashion. This will leave the gamers feeling like they made a choice to join the movement and that they have a sense of ownership in the platform. This allows us not only to attract gamers, but to build a brand at the same time.
+\subsection{Phase One}
+Getting the initial influencers onto the platform will be very straightforward: As users start filtering in, the only content they will be seeing is that from our Alpha testers. By becoming an Alpha tester they have the first opportunity to put content in front of a user. This gives them a very unique opportunity that they can’t currently get on another platform. On platforms like YouTube and Reddit, they are competing with every content creator for viewing time. Initially on Clutchat, they have the opportunity to impress every eyeball inside the system. As people filter in, influencers naturally have more of the Voice. This is the first time an opportunity like this has been available since Twitch launched.
+\section{Ideological Alignment}
+Our strategy is to put the gamer first in our platform. Everything we do is for their benefit and we build the technology around them. This is to ensure end-user adoption. There is nothing worse about the blockchain environment than all of the speculative activity.
+\subsection{Choosing a blockchain}
+When we set out on this endeavor, we knew that we would need to elect a blockchain to build on top of. Our intent was to find a blockchain whose ideology mirrors the gaming industry’s: primacy of the user, respect for the code, and opportunity for advancement. Gamer Ammo owes it to our users to build our product in a way that puts them and their assets first. For this reason, we are proudly using Ethereum Classic for development. As the vanguard of the second wave of blockchain, we focus on one particular user group and use case.
+\subsection{Ethereum Classic}
+Ethereum Classic is the original Ethereum. The Ethereum most people think of today is a copy of the original chain that the leadership rolled back the clock on when they chose to implement a hard fork in response to an attack that happened to an application developed on the Ethereum blockchain in 2016---even though the  network itself was not compromised.
+
+The development team and members of the Ethereum Classic community strongly believe that ``code is law''\cite{code-is-law}, which is to say that the integrity of the system is the most important thing and that no one user or group of users should receive favorable treatment. All users on the Ethereum Classic blockchain are equal and this aligns closely with the values systems built into video games. Games are nothing without their user base, and game developers do not change the gaming system at will to favor one group over another. This creates an egalitarian space in which opportunity for success is equally distributed to the user base.
+
+\chapter{Equity Distribution}
+
+While work was commencing on various iterations of Gamer Ammo as early as a year ago, Brandon JP Scott and sb swae did not formally incorporate Gamer Ammo, Inc., as a Michigan registered C-corporation until November 2017. The initial equity split was 50/50 but, as Gamer Ammo has grown, that equity has been diluted (see Ownership, below) to make room for the Board of Directors and new members of the team.
+
+Gamer Ammo, Inc., incorporated with 60,000 shares, but the Board has already had preliminary discussions about amending the company's filing with Michigan Licensing and Regulatory Affairs and issuing more stock.
+
+\section{Ownership}
+\subsection{Board of Directors}
+	\subsubsection{\textbf{18.63\%}}
+	\begin{itemize}
+		\item Common Stock: 1,300
+		\item Preferred Stock: 9,875
+	\end{itemize}
+\subsection{Sebastian B Swae}
+	\subsubsection{\textit{President, Treasurer, and Chief Financial Officer}: \textbf{27.14\%}}
+	\begin{itemize}
+		\item Common Stock: 15,286
+		\item FF Series shares: 1,000 (\ref{ff-series-shares})
+	\end{itemize}
+\subsection{Brandon JP Scott}
+	\subsubsection{\textit{Executive Chairman and Chief Executive Officer}: \textbf{22.86\%}}
+	\begin{itemize}
+		\item Common Stock: 12,715
+		\item FF Series shares: 1,000 (\ref{ff-series-shares})
+	\end{itemize}
+\subsection{Caleb T Gothberg}
+	\subsubsection{\textit{President and Chief Operating Officer}: \textbf{10.11\%}}
+	\begin{itemize}
+		\item Common Stock: 5,563
+		\item FF Series shares: 500 (\ref{ff-series-shares})
+	\end{itemize}
+\subsection{\emph{Name Withheld}}
+	\subsubsection{\textit{Secretary, Executive Vice President of Technology, and Chief Technology Officer}: \emph{up to} \textbf{9.36\%}} (Please see \ref{cto-offer})
+	\begin{enumerate}
+		\item Common Stock: up to 5,614 shares
+		\item Preferred Stock: 0
+		\begin{enumerate}
+			\item 5.00\% awarded 45 days after first day of full time employment;
+			\item 2.00\% awarded as PBRUs; and
+			\item 2.36\% awarded as PCSUs.
+		\end{enumerate}
+	\end{enumerate}
+\subsection{Casey J Gothberg}
+	\subsubsection{\textit{Executive Vice President of Design and Chief Creative Officer}: \emph{up to} \textbf{7.33\%}}
+	\begin{enumerate}
+		\item Common Stock: up to 4,397 shares
+		\item Preferred Stock: 0
+		\begin{enumerate}
+			\item 3.00\% awarded 45 days after first day of full time employment;
+			\item 2.00\% awarded as PBRUs; and
+			\item 2.33\% awarded as PCSUs.
+		\end{enumerate}
+	\end{enumerate}
+
+\subsection{Chief Marketing Officer}
+	\subsubsection{\textit{To Be Determined; Non-voting Director}: \emph{up to} 3.0\%}
+	\begin{enumerate}
+		\item Common Stock: up to 1,800 shares
+		\item Preferred Stock: 0
+		\begin{enumerate}
+			\item 1.00\% awarded 45 days after first day of full time employment;
+			\item 1.00\% awarded as PBRUs; and
+			\item 1.0\% awarded as PCSUs.
+		\end{enumerate}
+	\end{enumerate}
+
+\subsection{Future Employee \#1}
+	\subsubsection{\emph{up to 0.58\%}}
+		\begin{itemize}
+			\item Common Stock: 350
+			\item Preferred Stock: 0
+		\end{itemize}
+\subsection{Future Employee \#2}
+	\subsubsection{\emph{up to 0.33\%}}
+	\begin{itemize}
+		\item Common Stock: 200
+		\item Preferred Stock: 0
+	\end{itemize}
+\subsection{\emph{Name Withheld}}
+	\subsubsection{\textit{Advisory Board Member}}
+	\subsubsection{up to 0.33\%}
+		\begin{itemize}
+			\item Common Stock: 200
+			\item Preferred Stock: 0
+		\end{itemize}
+\subsection{\emph{Name Withheld}}
+	\subsubsection{\textit{Advisory Board Member}}
+	\subsubsection{up to 0.33\%}
+	\begin{itemize}
+		\item Common Stock: 200
+		\item Preferred Stock: 0
+	\end{itemize}
+\subsection{FF Series Shares}
+\label{ff-series-shares}{\small FF Series shares are Founder's Fund Preferred shares that allow the founders to access liquidity in the event of a venture capital investment with the consent of both the investor and the Board of Directors. Some or all of the FF Series shares may be sold by one or all of the holders to an investor at the time of closing an investment, at which time they shall automatically convert into the appropriate Series shares being sold at that time with all of the same rights and privileges of that Series of shares.\cite{ff-shares}}
+\subsection{Chief Technology Officer Offer}
+\label{cto-offer}{\small (This offer has not been officially made as of the time of writing.)}
+
+\chapter{Operations}
+This section provides an overview of how we intend to operate and manage this company as we usher in the second wave of blockchain application-layer technology. Starting with a guiding philosophy of building a culture of winners that will dominate the day-to-day activities, the section will also cover various other mechanisms, reporting arrangements, and external affairs before highlighting actions Gamer Ammo is taking to broaden the number of opinions and amount of expertise in the boardroom.
+\section{Win the Day}
+A major driver of success in the day-to-day operations of Gamer Ammo will be \textbf{The Power List}. We appropriated this idea from Andy Frisella, CEO of 1st Phorm and the \textit{MFCEO Project}\cite{power-list}. The Power List is a list of exactly five critical tasks that each employee within the organization will commit to completing before the end of the day. These lists will be visible to all members of the organization on our private Sandstorm cloud network. One item on the list is reserved for personal development (\textit{e.g.}, complete workout, eat your greens, etc), the second item is a free choice between work and personal development, and the remaining three items must pertain to critical work tasks that must be accomplished that day. When an employee successfully completes all five items on his or her list, they have ``Won the Day.''
+
+It is worth stating that, as we try to build a wholistic corporate culture of wellness, health, strength, and winning behavior, the Power List is not hierarchical. It is just as important to us that the employee does her workout as it is for her to compile a report.
+
+The intention behind instituting The Power List is to encourage winning behavior at all levels of our organization. The object is to win five days in a week to ``win the week'' and to move upward to start winning months and years. In the event that all of our employees only win 7 out of the twelve months in the year, it is provably certain that both the individual and the company will be in a measurably stronger position than at the start of the year.
+
+We will regularly aggregate the Power List data from the cloud to ensure that our team is winning and the appropriate C-level executive will meet with employees to come up with a plan for success in the event that an individual is having difficulty ``stacking up the wins.''
+
+\section{On-Boarding}
+Employment Agreements and Confidentiality and Non-Disclosure Agreements (\textbf{NDA}) are required of all employees of Gamer Ammo. NDAs are also required of parties we consult with but do not employ. Some employees, as part of their compensation package, may also be presented with any or all of the following: Performance Based Restricted Stock Unit Agreements (PBRUs), Performance Contingent Stock Unit Agreements (PCSUs), or Stock Option Agreements, all of which will be laid out in the 2018 Executive Incentive Plan (EIP).
+
+New members of the team will be presented with a series of articles that we consider to be ``required reading''\cite{crypto-canon} for successful navigation of the spaces we operate in. A roundtable conversation will be held with the new team member and members of the executive team to discuss the data and ideas presented in the content. The expectation is that new team members will quickly get ``up to speed'' and be able to speak in an educated fashion about all aspects of our business.
+
+The Chief Operating Officer shall be the primary individual that conducts interviews.
+
+It will be the responsibility of the Chief Technology Officer and the to adequately grant the employee access to any digital accounts, passwords, and/or software that they may require for successful execution of their duties.
+
+The Chief Financial Officer will administer the hiring event itself. A series of documents will govern the prospective employee's relationship and engagement with the company: the Employment Offer Term Sheet (non-binding), the Job Description Agreement, the Employment Agreement, and any supplemental documents such as PBRUs and/or PCSUs.
+
+When necessary, the Chief Financial Officer will grant purchasing power and/or authorize access to the Company's financial accounts to appropriate individuals. At present, the only members of the Gamer Ammo team who have access to the financial accounts are the CFO/Treasurer and the CEO.
+\section{Performance Reviews}
+Performance reviews will be conducted on a quarterly basis, calculated based on the employee's first day of full time employment with Gamer Ammo. Reviews will be conducted primarily by the Chief Operating Officer, but he may also elect to involve other C-level executives in the process. In the event that a review results in a negative assessment of the employee's performance over the preceding quarter, the COO will work with the employee to draft an improvement plan for that employee. The COO is also empowered to dismiss employees with Cause, which is defined the Executive Employment Agreement.
+
+In addition to standard reviews of performance, some employees may be awarded Performance-based Restricted Stock Units packages that vest on a quarterly basis provided that the employee achieves certain pre-determined levels of activity or passes certain milestones.
+
+\section{Internal Structure}
+All C-level executives will meet with the CEO once per week for a scheduled 30-minute meeting in which they will express to the CEO what their particular department has accomplished in the past week, their thoughts on the projects they are currently tasked to, and any ideas they may have for future direction or developments.
+
+On a daily basis, employees will report to the COO and CFO, as appropriate, with the COO being their primary direct report or supervisor while the CFO meets independently with the various department heads and members to ensure that the budget is being adhered to and to approve spending actions. The CFO and COO are expected to have daily contact with each other.
+
+Once per month, the CFO and the COO will have a meeting outside of the boardroom setting with the CEO.
+\section{External Affairs}
+The two C-level executives that will spend the most time dealing with affairs external to Gamer Ammo are the CEO and CFO. The CEO is broadly empowered to act and enter into agreements with third-parties. After the primary parameters of an agreement have been struck, the CFO will take over as the lead to secure the agreement and any monetary exchanges pursuant therein.
+
+The CFO will manage all of the monetary aspects pertaining to transactions with these third parties. Spends above a to-be-determined threshold will require approval of the CEO or, if they materially affect Gamer Ammo's business or operations, the Board of Directors.
+
+The CEO, acting as the Executive Chairman of the Board, shall be the primary point of contact for meetings with government officials and matters pertaining to regulation and audits.
+
+\section{Advisory Board Members}
+Gamer Ammo is engaged in discussions with three individuals about the prospect of them joining the Board of Directors in an advisory capacity.
+
+The first has an extensive background in global gaming, ranging from gambling to esports, and regulations therein. He has served as an excellent entry point into the Asian and European markets.
+
+The second manages a department for one of the most popular crypto asset exchanges in the world. At 27 years old, he has published multiple books on blockchain technology, crypto assets, and also has a vast network within the blockchain development community.
+
+The third possesses a background in investment banking with connections to venture capitalists worldwide and is a top level product manager for a global gaming industry leader.
+
+We look forward to striking a mutually beneficial agreement with these individuals in the near future.
+\chapter{Financial Planning}
+{\textbf{A substantial injection of capital is objectively imperative in order for Gamer Ammo to operate at a pace that will allow us to successfully see the Development Roadmap that we have publicly committed ourselves to through to completion.}}
+
+Gamer Ammo took in \$27,500 on a SAFE Note\cite{safe-note} in November 2017 that valued the company, pre-money, at \$2M. With this small cash infusion, we were able to make some much-needed equipment upgrades for the CEO, CFO, and COO. In the intervening time, the mission, vision, and design goals have been substantially refined and we are now well-positioned to begin work in earnest on development of the Clutchat app, the family of tokens, and the smart contracts that will power the entire Gamerammo economic system on the Ethereum Classic blockchain.
+
+Our Chief Creative and Technology Officers joined the team in late December and early January, respectively.
+
+Measures have been taken so as to allocate financial resources to maintaining the various server spinups, software packages, and service subscriptions that are ``mission critical.''
+
+With an injection of the \$10M in capital asked for above, Gamer Ammo would be able to dramatically increase the intensity of operations. First priorities include:
+
+\begin{itemize}
+\item paying out salaries commensurate with the quality and intensity of work expected from the team (see Table \ref{tab:budget-current-staff}, and Table \ref{tab:budget-future-staff});
+\item securing and furnishing office space so that the team can work more comfortably in a proper work environment (at present, we are operating out of a 1200 square foot (110 square meter) residential rental property in Battle Creek, MI) (see Table \ref{tab:budget-office-space});
+\item purchasing computer equipment for the team so that they may stop using their personal machines (see Table \ref{tab:budget-equipment});
+\item hiring a Chief Marketing Officer and allocating a substantial budget to that department to immediately begin increasing brand and product awareness, reach, and begin acquiring users (see Table \ref{tab:budget-future-staff}, and  Table \ref{tab:budget-marketing});
+\item traveling to an array of gaming and blockchain conferences and events to meet our users where they're at (see Table \ref{tab:budget-TE});
+\item begin making manufacturing and purchasing arrangements so as to adequately stock the Armory webstore (see Table \ref{tab:budget-inventory}); and
+\item taking steps to ensure that Gamer Ammo remains legally compliant in all 50 US states as well as in our other major markets around the world (see Table \ref{tab:budget-regulatory}).
+\end{itemize}
+\part{Budget Proposal}
+\begin{table}
+\centering
+\caption{Total Budget}
+\vspace{2ex}
+\huge{\begin{tabular}{|||c|||} \hline\hline\hline
+\textit{Budgeted Total} \\\hline\hline
+\textbf{\$9,485,570} \\ \hline\hline\hline
+\end{tabular}}
+\label{tab:budget-total}
+\end{table}
+\begin{table}
+\centering
+\caption{Office Space Budget}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Rent & \$10,000 & 12 &  \$120,000\\ \hline
+Security Dep. \& Fees & \$15,000 & 1 & \$15,000 \\ \hline
+Leasehold Improvements & \$30,000 & 1 & \$30,000\\ \hline
+Furniture \& Fixtures & up to \$60,000 & 1 & \$60,000 \\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$225,000}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-office-space}
+\end{table}
+\begin{table}
+\centering
+\caption{Office Operating Costs}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Supplies & \$1,000 & 12 & \$12,000 \\ \hline
+stamps.com & \$15 & 12 & \$180 \\ \hline
+Postage \& Shipping & \$350 & 12 & \$4,200\\ \hline
+Snow Removal & \$500 & 4 & \$2,000 \\ \hline
+Utilities & \$3,000 & 12 & \$36,000\\ \hline
+Broadband Internet & \$500 & 12 & \$6,000\\ \hline
+Janitorial Services & \$500 & 12 & \$6,000\\ \hline
+Repairs \& Maintenance &  \$1,000 & 12 & \$12,000 \\ \hline
+Phone Service & \$1,200 & 12 & \$14,400\\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$92,780}}} \\ \hline\hline
+\end{tabular}
+\label{tab:office-operating-costs}
+\end{table}
+\begin{table}
+\centering
+\caption{Miscellaneous Operating Costs}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Filing Fees & \$10,000 & 1 & \$10,000 \\ \hline
+Expense Reimbursement & \$25,000 & 1 & \$25,000 \\ \hline
+Payroll Service & \$200 & 12 & \$2,400 \\ \hline
+Training & \$150,000 & 1 & \$150,000 \\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$187,400}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-misc}
+\end{table}
+\begin{table}
+\centering
+\caption{Technology Department Budget}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Extneral Servers & \$5,000 & 12 & \$60,000 \\ \hline
+Interal Server & \$850 & 12 & \$10,200 \\ \hline
+GitHub Enterprise & \$150 & 12 & \$1,800\\ \hline
+Slack Subscription & \$125 & 12 & \$1,500 \\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$73,500}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-tech-department}
+\end{table}
+\begin{table}
+\centering
+\caption{Outside Services}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Legal & \$750,000 & 1 & \$750,000 \\ \hline
+Accounting & \$50,000 & 1 & \$50,000 \\ \hline
+Patent Filing & \$1500 & 4 & \$6,000\\ \hline
+Copyright Fiiing & \$55 & 10 & \$550 \\ \hline
+Trademark Filing & \$600 & 4 & \$2,400\\ \hline
+Consulting & \$150,000 & 1 & \$150,000\\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$958,950}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-outside-services}
+\end{table}
+\begin{table}
+\centering
+\caption{Salaries for Current Staff}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Chief Executive Officer & \$100,000 & 1 & \$100,000 \\ \hline
+Chief Financial Officer & \$115,000 & 1 & \$115,000 \\ \hline
+Chief Operating Officer & \$125,000 & 1 & \$125,000 \\ \hline
+Chief Technology Officer & \$125,000 & 1 & \$125,000 \\ \hline
+Chief Creative Officers & \$100,000 & 1 & \$100,000\\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$565,000}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-current-staff}
+\end{table}
+\begin{table}
+\centering
+\caption{Salaries for Future Staff}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Chief Marketing Officer & up to \$135,000 & 1 & \$135,000 \\ \hline
+Engineer & up to \$135,000 & 1 & \$135,000 \\ \hline
+Engineer & up to \$135,000 & 1 & \$135,000 \\ \hline
+Employee \#1 & \$65,000 & 1 & \$65,000 \\ \hline
+Employee \#2 & \$55,000 & 1 & \$55,000\\ \hline
+Employee \#3 & \$45,000 & 1 & \$45,000 \\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$570,000}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-future-staff}
+\end{table}
+\begin{table}
+\centering
+\caption{Projected Taxes}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Payroll Taxes & \$750,0000 & 1 & \$750,000 \\ \hline
+D\&O Insurance & \$2,000 & 1 & \$2,000 \\ \hline
+Health Insurance & \$45,000 & 1 & \$45,000\\ \hline
+Worker's Compensation & \$3,000 & 1 & \$3,000 \\ \hline
+Michigan Corp Income Tax & \$120,000 & 1 & \$120,000\\ \hline
+Federal Corp Income Tax & \$700,000 & 1 & \$700,000\\ \hline
+Other Taxes & \$15,000 & 1 & \$15,000\\ \hline
+General Liability, E\&O, etc. & \$6,000 & 1 & \$6,000 \\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$1,641,000}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-projected-taxes}
+\end{table}
+\begin{table}
+\centering
+\caption{Equipment \& Software}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Computer Equipment & \$75,140 & 1 & \$75,140 \\ \hline
+Computer Software & \$25,000 & 1 & \$25,000\\ \hline
+Internal Server Purchase & \$45,000 & 1 & \$45,000 \\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$145,140}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-equipment}
+\end{table}
+\begin{table}
+\centering
+\caption{Marketing Department}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Marketing Dept Budget & \$167,000 & 12 & \$2,004,000 \\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$2,004,000}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-marketing}
+\end{table}
+\begin{table}
+\centering
+\caption{Travel \& Entertainment}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Travel (domestic and int'l; 10-3 people) & \$10,000 & 12 & \$120,000 \\ \hline
+Entertainment & \$2500 & 12 & \$30,000 \\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$150,000}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-TE}
+\end{table}
+\begin{table}
+\centering
+\caption{Regulatory Compliance}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Domestic & \$1,500,000 & 1 & \$1,500,000 \\ \hline
+International (major markets) & \$1,000,000 & 1 & \$1,000,000\\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$2,500,000}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-regulatory}
+\end{table}
+\begin{table}
+\centering
+\caption{Armory Inventory}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Initial Stocking (self-sustaining thereafter) & \$200,000 & 1 & \$200,000\\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$200,000}}} \\ \hline\hline
+\end{tabular}
+\label{tab:budget-inventory}
+\end{table}
+\begin{table}
+\centering
+\caption{Miscellaneous Financials}
+\vspace{2ex}
+\begin{tabular}{||c|c|c|r||} \hline\hline
+\multicolumn 2 {||c|}{Budget Items} &
+\multicolumn 2 {c||}{Cost Calculations} \\ \hline
+Item & Cost & Frequency & Total Item Cost \\ \hline\hline
+Bank Charges & \$500 & 12 & \$6,000 \\ \hline
+Wire Transfer Fees & \$65 & 36 & \$2,340 \\ \hline
+Crypto Tx Fees & \$800 & 12 & \$9,600 \\ \hline
+Cryptocurrency Investment & \$200,000 & 1 & \$200,000 \\ \hline
+Working Capital & \$100,000 & 1 & \$100,000 \\ \hline\hline
+\multicolumn 1 {||c|}{TOTAL COST} &
+\multicolumn 3 {c||}{\Large{\textbf{\$317,940}}} \\ \hline\hline
+\end{tabular}
+\label{tab:misc}
+\end{table}
+\bibliographystyle{plain}
+\bibliography{bib}
+\chapter{Document Revisions}
+\centering
+\begin{tabular}{ || c | c | c | c ||}\hline \hline
+  Revision & Performed by & Date & Comments \\ \hline\hline
+0.1 & sb swae, BJPS, \& CG & \ 09 Feb 2018 & \ Drafting \\ \hline
+0.2 & sb swae & \ 15 Feb 2018 & \ \LaTeX \  format \\ \hline
+0.3 & sb swae & \ 16 Feb 2018 & \ Text migration \\ \hline
+0.4 & sb swae & \ 17 Feb 2018 & \ Budget \& Tables \\ \hline
+0.5 & sb swae & \ 17 Feb 2018 & \ References \\ \hline
+0.6 & sb swae & \ 18 Feb 2018 & \ Copy editing \\ \hline
+0.7 & sb swae, BJPS & \ 18 Feb 2018 & \ Proofing  \\ \hline
+0.8 & sb swae & \ 18 Feb 2018 & \ Prepared for Swan's Egg, LLC  \\ \hline
+0.81 \label{tab:current-revision} & sb swae & \ 20 Feb 2018 & \ Revised budget; Prepared for Jon Dault  \\ \hline \hline
+\end{tabular}
+\newline
+\newline
+\newline
+\centering \copyright 2018 Gamer Ammo, Inc.
+\end{document}
