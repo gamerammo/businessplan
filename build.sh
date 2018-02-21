@@ -27,7 +27,7 @@ fi
 
 
 
-echo "\newcommand{\businessplanVersionNunmber}{$REV}" > version.tex
+echo "\newcommand{\businessplanVersionNumber}{$REV}" > version.tex
 
 mkdir build
 pdflatex -output-directory=build -interaction=errorstopmode -halt-on-error plan.tex && \
