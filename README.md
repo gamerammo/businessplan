@@ -9,11 +9,11 @@ It is a free culture work, licensed under Creative Commons Attribution Share-Ali
 
 ## Usage
 
-The Business Plan is a single ``latex`` file ``plan.tex``. The latest version is generally available as a PDF at https://gamerammo.github.io/plan.pdf.
+The Business Plan is a single ``latex`` file ``plan.tex``. The latest version is generally available as a PDF at https://gamerammo.github.io/businessplan/plan.pdf.
 
 ## How to build the plan
 
-To build the Gamer Ammmo Buisness Plan folllow the directions below.
+To build the Gamer Ammo Business Plan follow the directions below.
 
 ```
 git clone https://github.com/gamerammo.businessplan.git

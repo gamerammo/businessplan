@@ -4,7 +4,7 @@ plan.bbl
 plan.blg
 plan.log
 plan.out
-plan.pdf
+build/plan.pdf
 plan.toc
 plan.lot
 version.tex
