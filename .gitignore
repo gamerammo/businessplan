@@ -7,4 +7,8 @@ plan.out
 build/plan.pdf
 plan.toc
 plan.lot
+plan.fls
+plan.fdb_latexmk
+version.log
 version.tex
+build/
