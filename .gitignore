@@ -4,11 +4,17 @@ plan.bbl
 plan.blg
 plan.log
 plan.out
-build/plan.pdf
+plan.pdf
 plan.toc
 plan.lot
 plan.fls
 plan.fdb_latexmk
+<<<<<<< HEAD
 version.log
 version.tex
 build/
+=======
+version.tex
+version.log
+build
+>>>>>>> 7f602e8f6d2f538495982189831c6076e778e8da
