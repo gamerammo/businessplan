@@ -17,5 +17,5 @@ env:
   global:
     - ENCRYPTION_LABEL="acb03761bdb0"
     - COMMIT_AUTHOR_EMAIL="xcesiv@gamerammo.io"
-    - COMMIT_AUTHOR="xcesiv"
+    - COMMIT_AUTHOR="travis"
     - PUSH_REPO="git@github.com:gamerammo/businessplan.git"
