@@ -5,11 +5,14 @@ before_install:
 - sudo apt-get install texlive texlive-latex3
 - sudo apt install texlive-latex-extra
 - chmod +x build.sh
+- chmod +x travis_deploy.sh
+- gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+
 script:
 - ./build.sh
 deploy:
   provider: script
-  script: chmod +x ./travis_deploy.sh
+  script: ./travis_deploy.sh
   skip_cleanup: true
   on:
     branch: master
@@ -17,5 +20,5 @@ env:
   global:
     - ENCRYPTION_LABEL="acb03761bdb0"
     - COMMIT_AUTHOR_EMAIL="xcesiv@gamerammo.io"
-    - COMMIT_AUTHOR="xcesiv"
+    - COMMIT_AUTHOR="travis"
     - PUSH_REPO="git@github.com:gamerammo/businessplan.git"
